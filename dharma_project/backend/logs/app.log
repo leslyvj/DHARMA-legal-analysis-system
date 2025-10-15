@@ -1,0 +1,197 @@
+2025-10-16 01:15:48,490 [INFO] sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2025-10-16 01:15:48,490 [INFO] sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-16 01:15:52,015 [WARNING] huggingface_hub.file_download: Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-10-16 01:25:43,481 [INFO] sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2025-10-16 01:25:43,481 [INFO] sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-16 01:28:58,750 [INFO] DHARMA: ================================================================================
+2025-10-16 01:28:58,798 [INFO] DHARMA: ================================================================================
+2025-10-16 01:29:52,021 [ERROR] DHARMA: Legal mapping error: 1 validation error for LegalGrounding
+confidence_score
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-0.6872080564498901, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal
+2025-10-16 01:29:52,027 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 725, in map_legal_sections
+    grounding = LegalGrounding(
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for LegalGrounding
+confidence_score
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-0.6872080564498901, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal
+
+2025-10-16 01:29:52,028 [ERROR] DHARMA: Processing failed: Legal mapping failed: 1 validation error for LegalGrounding
+confidence_score
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-0.6872080564498901, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal
+2025-10-16 01:29:52,030 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 725, in map_legal_sections
+    grounding = LegalGrounding(
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for LegalGrounding
+confidence_score
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-0.6872080564498901, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 953, in process_fir
+    legal_sections = map_legal_sections(extracted_data, fir_text_for_processing)
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 746, in map_legal_sections
+    raise LegalMappingError(f"Legal mapping failed: {str(e)}")
+LegalMappingError: Legal mapping failed: 1 validation error for LegalGrounding
+confidence_score
+  Input should be greater than or equal to 0 [type=greater_than_equal, input_value=-0.6872080564498901, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than_equal
+
+2025-10-16 01:34:50,206 [INFO] sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2025-10-16 01:34:50,206 [INFO] sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-16 01:35:15,279 [INFO] DHARMA: ================================================================================
+2025-10-16 01:35:15,286 [INFO] DHARMA: ================================================================================
+2025-10-16 01:36:30,706 [INFO] DHARMA: ================================================================================
+2025-10-16 01:37:48,899 [INFO] DHARMA: ================================================================================
+2025-10-16 01:37:48,915 [INFO] DHARMA: ================================================================================
+2025-10-16 01:38:26,294 [ERROR] DHARMA: Extraction error: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:38:26,306 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in extract_fir_data
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in <listcomp>
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:38:26,308 [ERROR] DHARMA: Processing failed: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:38:26,309 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in extract_fir_data
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in <listcomp>
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 969, in process_fir
+    extracted_data = extract_fir_data(fir_text_for_processing)
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 607, in extract_fir_data
+    raise ExtractionError(f"Extraction failed: {str(e)}")
+ExtractionError: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:38:49,452 [INFO] DHARMA: ================================================================================
+2025-10-16 01:38:49,469 [INFO] DHARMA: ================================================================================
+2025-10-16 01:39:27,426 [ERROR] DHARMA: Extraction error: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:39:27,428 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in extract_fir_data
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in <listcomp>
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:39:27,428 [ERROR] DHARMA: Processing failed: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:39:27,431 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in extract_fir_data
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 587, in <listcomp>
+    property_loss=[PropertyLoss(**p) for p in data.get('property_loss', [])],
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 969, in process_fir
+    extracted_data = extract_fir_data(fir_text_for_processing)
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 607, in extract_fir_data
+    raise ExtractionError(f"Extraction failed: {str(e)}")
+ExtractionError: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:48:12,216 [INFO] sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2025-10-16 01:48:12,221 [INFO] sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-16 01:48:28,235 [INFO] DHARMA: ================================================================================
+2025-10-16 01:48:28,242 [INFO] DHARMA: ================================================================================
+2025-10-16 01:49:15,838 [ERROR] DHARMA: Extraction error: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:49:15,842 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 603, in extract_fir_data
+    property_loss=[
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 604, in <listcomp>
+    PropertyLoss(
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:49:15,842 [ERROR] DHARMA: Processing failed: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-10-16 01:49:15,843 [ERROR] DHARMA: Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 603, in extract_fir_data
+    property_loss=[
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 604, in <listcomp>
+    PropertyLoss(
+  File "C:\Users\ragna\.conda\envs\langserve_env\lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 992, in process_fir
+    extracted_data = extract_fir_data(fir_text_for_processing)
+  File "C:\Users\ragna\.conda\envs\langserve_env\Dharma\dharma_project\backend\app.py", line 630, in extract_fir_data
+    raise ExtractionError(f"Extraction failed: {str(e)}")
+ExtractionError: Extraction failed: 1 validation error for PropertyLoss
+item
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+
+2025-10-16 01:51:02,865 [INFO] sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2025-10-16 01:51:02,865 [INFO] sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-16 01:51:17,769 [INFO] DHARMA: ================================================================================
+2025-10-16 01:51:17,788 [INFO] DHARMA: ================================================================================
+2025-10-16 01:52:45,139 [INFO] DHARMA: ================================================================================
