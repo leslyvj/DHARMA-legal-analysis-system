@@ -20,10 +20,11 @@ import pandas as pd
 from datetime import datetime
 from pathlib import Path
 import time
+import os
 
 # ------------------ CONFIGURATION ------------------
 
-BACKEND_URL = "http://localhost:8080"
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8080")
 
 # Page config
 st.set_page_config(
